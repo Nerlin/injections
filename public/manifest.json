@@ -1,15 +1,21 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "InjectionsApp",
+  "name": "Injections Journal",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "injection.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "injection.png",
+      "sizes": "128x128 192x192 512x512",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "description": "Allows to remember injection places."
 }
