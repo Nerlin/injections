@@ -25,7 +25,7 @@ export default class InjectionStories {
               injections.points = Object.fromEntries(
                 Object.entries(injectionsData.points).map(
                   ([point, dateString]) => {
-                    return [point, new Date(Date.parse(dateString as any))];
+                    return [point, dateString];
                   }
                 )
               );

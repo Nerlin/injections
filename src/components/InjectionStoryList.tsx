@@ -39,6 +39,7 @@ const StyledInjectionStoryList = styled.div`
   display: flex;
   flex-direction: column;
   margin: 1em;
+  color: ${props => props.theme.color};
 `;
 
 export default observer(InjectionStoryList);

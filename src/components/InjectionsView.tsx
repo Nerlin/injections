@@ -17,7 +17,7 @@ const InjectionsView: React.FC<InjectionsViewProps> = ({
   injections
 }) => {
   const context = useContext(AppContext);
-  const setInjectionPoint = (point: InjectionPoint, date: Date) => {
+  const setInjectionPoint = (point: InjectionPoint, date: string) => {
     injections.inject(point, date);
     context.saveStories();
   };

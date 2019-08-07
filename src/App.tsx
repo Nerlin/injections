@@ -65,6 +65,8 @@ const App: React.FC = () => {
   );
 };
 
-const Theme = {};
+const Theme = {
+  color: "black"
+};
 
 export default App;

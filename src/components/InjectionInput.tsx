@@ -4,12 +4,12 @@ import { InjectionPoint } from "../state/Injections";
 
 export interface InjectionInputProps {
   point: InjectionPoint;
-  date?: Date;
-  onChange(point: InjectionPoint, date: Date): void;
+  date?: string;
+  onChange(point: InjectionPoint, date: string): void;
 }
 
 const InjectionInput: React.FC<InjectionInputProps> = ({
-  date,
+  date = "",
   point,
   onChange
 }) => {
@@ -24,7 +24,7 @@ const InjectionInput: React.FC<InjectionInputProps> = ({
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      onChange(point, new Date(Date.parse(e.currentTarget.value)));
+      onChange(point, e.currentTarget.value);
     },
     [point, onChange]
   );
@@ -32,7 +32,7 @@ const InjectionInput: React.FC<InjectionInputProps> = ({
   return (
     <input
       type={focused ? "date" : "text"}
-      value={date ? formatDate(date) : ""}
+      value={date}
       placeholder={point}
       onFocus={handleFocus}
       onBlur={handleBlur}
@@ -40,15 +40,5 @@ const InjectionInput: React.FC<InjectionInputProps> = ({
     />
   );
 };
-
-function formatDate(date: Date): string {
-  return `${date.getFullYear()}-${date
-    .getMonth()
-    .toString()
-    .padStart(2, "0")}-${date
-    .getDate()
-    .toString()
-    .padStart(2, "0")}`;
-}
 
 export default InjectionInput;
